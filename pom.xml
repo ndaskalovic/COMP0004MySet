@@ -8,7 +8,7 @@
   <artifactId>MySet</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <name>Bag</name>
+  <name>MySet</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -17,7 +17,6 @@
   </properties>
 
   <build>
-    <pluginManagement>
       <plugins>
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
@@ -59,7 +58,14 @@
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.0.0</version>
         </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>exec-maven-plugin</artifactId>
+          <version>1.6.0</version>
+          <configuration>
+            <mainClass>uk.ac.ucl.Main</mainClass>
+          </configuration>
+        </plugin>
       </plugins>
-    </pluginManagement>
   </build>
 </project>
