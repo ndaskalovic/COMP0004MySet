@@ -28,6 +28,11 @@ public abstract class AbstractMySet<T extends Comparable<T>> implements MySet<T>
   public List<T> toList()
   {
     // TODO write the code to return a List of the set contents.
+      for (T setValue : this )
+      {
+        System.out.print(setValue + " ");
+      }
+
     return new ArrayList<>();
   }
 
@@ -37,6 +42,14 @@ public abstract class AbstractMySet<T extends Comparable<T>> implements MySet<T>
 
     //TODO write the statements needed to find the union
 
+    for (T value : this){
+      result.add(value);
+    }
+    for (T value : mySet){
+      result.add(value);
+    }
+
+
     return result;
   }
 
@@ -45,6 +58,13 @@ public abstract class AbstractMySet<T extends Comparable<T>> implements MySet<T>
     MySet<T> result = MySetFactory.getInstance().getMySet();
 
     // TODO write the statements needed to find the intersection.
+    for (T value1 : this){
+      for (T value2 : mySet){
+        if (value1 == value2){
+          result.add(value1);
+        }
+      }
+    }
 
     return result;
   }
@@ -53,7 +73,21 @@ public abstract class AbstractMySet<T extends Comparable<T>> implements MySet<T>
   {
     MySet<T> result = MySetFactory.getInstance().getMySet();
 
+
     // TODO write the statements needed to find the difference.
+    for (T value1 : this){
+      if (mySet.contains(value1) == false){
+        result.add(value1);
+      }
+    }
+
+    for (T value2 : mySet){
+      if (this.contains(value2) == false){
+        result.add(value2);
+      }
+    }
+
+
     return result;
   }
 
